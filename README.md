@@ -37,6 +37,6 @@ To install the most recent release from npm, run:
 
 ##Change Log##
 
-* 2013/4/16
+* 2013/4/15
 	+ 0.1.0 release  
 	+ npm release  
