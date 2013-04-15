@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "repository": {
         "type": "git",
-        "url": "https://ystskm@github.com/ystskm/child-io.git"
+        "url": "https://ystskm@github.com/ystskm/node-child-io.git"
     },
   "main": "./index",
   "engines": {
