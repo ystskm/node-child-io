@@ -1,0 +1,19 @@
+{
+  "name": "child-io",
+  "description": "Create child process for executing dangerous(user-made) function.",
+  "version": "0.1.0",
+  "repository": {
+        "type": "git",
+        "url": "https://ystskm@github.com/ystskm/child-io.git"
+    },
+  "main": "./index",
+  "engines": {
+    "node": ">=0.8.21"
+  },
+  "dependencies": {
+  },
+  "licenses": [{
+    "type": "MIT",
+    "url": "http://github.com/ystskm/child-io/blob/master/LICENSE.txt"
+  }]
+}
