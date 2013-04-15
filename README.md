@@ -25,18 +25,28 @@ To install the most recent release from npm, run:
 	}
 
 > ex.1  
+  simple return
 
-	var IO = require('child-io').IO();
-	IO.on('data', function(ret){
+	var io = require('child-io').IO();
+	io.on('data', function(ret){
 	  console.log('Result: ' + ret); // "Result: true"
 	}).on('end', function(msec){
 	  console.log('Killed child_process. Execute time is: ' + msec + ' ms');
-	}).exec('function(){ return true; }');
+	}).exec(function(){ return true; });
 
+> ex.2  
+  use asynchronous callback 
   
+	var io = require('child-io').IO();
+	io.on('data', function(d){
+	  console.log('Result: ' + ret); // "Result: false"
+	}).on('end', function(){
+	  console.log('Killed child_process. Execute time is: ' + msec + ' ms');
+	}).exec(function(sender){ process.nextTick(function(){ sender(false) }); });
+	
 
 ##Change Log##
 
 * 2013/4/15
-	+ 0.1.0 release  
+	+ 0.1.3 release  
 	+ npm release  
