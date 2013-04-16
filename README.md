@@ -30,10 +30,16 @@ To install the most recent release from npm, run:
 - `options` (Object)
   * limit: (Default = 300)  
     max time to finish executing (millisecond).  
-    When exceeded the time, Error 'Execution time is over'  
+    When exceeded the time, "timeout" event is emitted with Error 'Execution time is over'.  
   * args : (Default = [] )  
     given arguments when the function is executed.  
     the data send function "sender" will be put to.  
+  
+- Event
+  * data
+  * end
+  * timeout
+  * error
   
 > ex.1  
   simple return
@@ -55,13 +61,17 @@ To install the most recent release from npm, run:
 	  console.log('Killed child_process(async). Execute time is: ' + msec + ' ms');
 	}).exec(function(sender){ process.nextTick(function(){ sender(false) }); });
 	
+> see [child-io\_test.js](https://github.com/ystskm/node-child-io/blob/master/sample/child-io\_test.js) for more deep use.
 
 ##Change Log##
 
-* 2013/4/15
-	+ 0.1.5 release  
+* 2013/4/16
+	+ 0.2.0 release  
 	+ add option key 'args'  
+	+ add "timeout" event
+	+ add wrap function for asynchronous use
 	+ add more explanation for each arguments
+	+ add list of Event
 	
 * 2013/4/15
 	+ 0.1.3 release  
