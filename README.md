@@ -66,7 +66,7 @@ To install the most recent release from npm, run:
 ##Change Log##
 
 + 2013/4/16
-  +- 0.2.0 release
+  - 0.2.0 release
   - add option key 'args'
   - add "timeout" event
   - add wrap function for asynchronous use
