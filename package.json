@@ -1,11 +1,11 @@
 {
   "name": "child-io",
   "description": "Create child process for executing dangerous(user-made) function.",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "author": "ystskm <brilliantpenguin@gmail.com>",
   "repository": {
         "type": "git",
-        "url": "https://ystskm@github.com/ystskm/node-child-io.git"
+        "url": "https://github.com/ystskm/node-child-io.git"
     },
   "main": "./index",
   "engines": {
