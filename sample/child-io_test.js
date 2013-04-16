@@ -6,7 +6,7 @@ io.on('error', function(e){
   console.log('Error Occurs.');
   throw e;
 }).on('data', function(d){
-  console.log('Data: ' + JSON.stringify(d));
+  console.log('Data: ' + JSON.stringify(d)); // <- Go here
 }).on('end', function(ms){
   console.log('End of IO1. ' + ms + 'ms');
 }).exec(function(){ return { hoge: 'fuga' }; });
@@ -17,7 +17,7 @@ io.on('error', function(e){
   console.log('Error Occurs.');
   throw e;
 }).on('data', function(d){
-  console.log('Data: ' + d);
+  console.log('Data: ' + d); // <- Go here (2 times)
 }).on('end', function(ms){
   console.log('End of IO2. ' + ms + 'ms');
 }).exec(function(sender){ process.nextTick(function(){ sender('one', true), sender('two'); }); });
@@ -28,7 +28,7 @@ io.on('error', function(e){
   console.log('Error Occurs.');
   throw e;
 }).on('timeout', function(e){
-  console.error(e);
+  console.error(e); // <- Go here
 }).on('data', function(d){
   console.log('Data: ' + d);
 }).on('end', function(ms){
@@ -41,7 +41,7 @@ setTimeout(function(){
   io = new IO();
   io.on('error', function(e){
     console.log('Error Occurs.');
-    throw e;
+    throw e; // <- Go here
   }).on('timeout', function(e){
     console.error(e);
   }).on('data', function(d){

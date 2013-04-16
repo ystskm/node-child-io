@@ -65,14 +65,14 @@ To install the most recent release from npm, run:
 
 ##Change Log##
 
-* 2013/4/16
-	+ 0.2.0 release  
-	+ add option key 'args'  
-	+ add "timeout" event
-	+ add wrap function for asynchronous use
-	+ add more explanation for each arguments
-	+ add list of Event
-	
-* 2013/4/15
-	+ 0.1.3 release  
-	+ npm release  
++ 2013/4/16
+  +- 0.2.0 release
+  - add option key 'args'
+  - add "timeout" event
+  - add wrap function for asynchronous use
+  - add more explanation for each arguments,
+  - add list of Event
+
++ 2013/4/15
+  - 0.1.3 release
+  - npm release
