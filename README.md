@@ -61,7 +61,7 @@ To install the most recent release from npm, run:
 	  console.log('Killed child_process(async). Execute time is: ' + msec + ' ms');
 	}).exec(function(sender){ process.nextTick(function(){ sender(false) }); });
 	
-> see [child-io\_test.js](https://github.com/ystskm/node-child-io/blob/master/sample/child-io\_test.js) for more deep use.
+> see [child-io\_test.js](https://github.com/ystskm/node-child-io/blob/master/sample/child-io_test.js) for more deep use.
 
 ##Change Log##
 
