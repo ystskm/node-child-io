@@ -8,7 +8,7 @@ io.on('error', function(e){
 }).on('data', function(d){
   console.log('Data: ' + JSON.stringify(d)); // <- Go here
 }).on('end', function(ms){
-  console.log('End of IO1. ' + ms + 'ms');
+  console.log('End of IO1. ' + ms + 'ms'); // <- Go here for last
 }).exec(function(){ return { hoge: 'fuga' }; });
 
 // asynchronous and keep aliving
@@ -19,7 +19,7 @@ io.on('error', function(e){
 }).on('data', function(d){
   console.log('Data: ' + d); // <- Go here (2 times)
 }).on('end', function(ms){
-  console.log('End of IO2. ' + ms + 'ms');
+  console.log('End of IO2. ' + ms + 'ms'); // <- Go here for last
 }).exec(function(sender){ process.nextTick(function(){ sender('one', true), sender('two'); }); });
 
 // timeout error
@@ -28,7 +28,7 @@ io.on('error', function(e){
   console.log('Error Occurs.');
   throw e;
 }).on('timeout', function(e){
-  console.error(e); // <- Go here
+  console.error(e); // <- Go here for last.
 }).on('data', function(d){
   console.log('Data: ' + d);
 }).on('end', function(ms){
@@ -41,7 +41,7 @@ setTimeout(function(){
   io = new IO();
   io.on('error', function(e){
     console.log('Error Occurs.');
-    throw e; // <- Go here
+    throw e; // <- Go here for last.
   }).on('timeout', function(e){
     console.error(e);
   }).on('data', function(d){
