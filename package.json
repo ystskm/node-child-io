@@ -15,6 +15,12 @@
   },
   "licenses": [{
     "type": "MIT",
-    "url": "http://github.com/ystskm/node-child-io/blob/master/LICENSE.txt"
-  }]
+    "url": "http://github.com/ystskm/node-child-io/blob/master/LICENSE.md"
+  }],
+  "readmeFilename": "README.md",
+  "keywords": [
+    "child_process",
+    "keep-alive"
+  ],
+  "license": "MIT"
 }
