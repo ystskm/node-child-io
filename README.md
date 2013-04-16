@@ -17,13 +17,24 @@ To install the most recent release from npm, run:
 
 > general  
 	
-	var IO = require('child-io').IO();
-	IO.exec(func | file, [options]);
+	var io = require('child-io').IO([argv]);
+	io.exec(func | file, [options]);
   
-	Default of options = {
-	  limit: 300 (ms)
-	}
-
+- `argv` (Array)  
+  process arguments used when child_process is .fork()ed.  
+  
+- `func` (Function|String) | `file` (String)  
+  executing original function.  
+  eval() or require() should be success to extract item.
+  
+- `options` (Object)
+  * limit: (Default = 300)  
+    max time to finish executing (millisecond).  
+    When exceeded the time, Error 'Execution time is over'  
+  * args : (Default = [] )  
+    given arguments when the function is executed.  
+    the data send function "sender" will be put to.  
+  
 > ex.1  
   simple return
 
@@ -47,6 +58,11 @@ To install the most recent release from npm, run:
 
 ##Change Log##
 
+* 2013/4/15
+	+ 0.1.5 release  
+	+ add option key 'args'  
+	+ add more explanation for each arguments
+	
 * 2013/4/15
 	+ 0.1.3 release  
 	+ npm release  
