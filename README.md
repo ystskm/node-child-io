@@ -1,7 +1,7 @@
 #:: child-io ::
 
 ##Abstract
-#### Create child process for executing dangerous(user-made) function.
+#### Create child process for safe execution of dangerous(e.g. user-made) function.
 
 ##Documents
 #### Preparing
