@@ -27,10 +27,12 @@ To install the most recent release from npm, run:
   eval() or require() should be success to extract item.
   
 - `options` (Object)
-  * limit: (Default = 300)  
+  * limit  : (Default = 300)  
     max time to finish executing (millisecond).  
     When exceeded the time, "timeout" event is emitted with Error 'Execution time is over'.  
-  * args : (Default = [] )  
+  * replace: (Default = {})
+    String replacement for using variable in executing function.
+  * args   : (Default = [])  
     given arguments when the function is executed.  
     the data send function "sender" will be put to.  
   
