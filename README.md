@@ -64,6 +64,10 @@ To install the most recent release from npm, run:
 	
 > see [child-io\_test.js](https://github.com/ystskm/node-child-io/blob/master/sample/child-io_test.js) for more deep use.
 
+##Note##
+
+Use FakeChild class when v8debug is tied up.
+
 ##Change Log##
 
 + 2013/4/16
