@@ -70,6 +70,10 @@ Use FakeChild class when v8debug is tied up.
 
 ##Change Log##
 
++ 2013/5/24
+  - 0.3.1 release
+  - add FakeChild class for --debug environment
+
 + 2013/4/16
   - 0.2.0 release
   - add option key 'args'
