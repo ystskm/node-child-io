@@ -1,20 +1,12 @@
-#:: child-io ::
-
-##Abstract
+#child-io
 #### Create child process for safe execution of dangerous(e.g. user-made) function.
 
-##Documents
-#### Preparing
-
-##Install##
-
-To install the most recent release from npm, run:
+##Install
+To install the most recent release from [npm](http://npmjs.org/), run:
 
 	npm install child-io
 
-##Usage##
-
-> general  
+##Usage
 	
 	var io = require('child-io').IO([argv]);
 	io.exec(func | file, [options]);
@@ -42,8 +34,7 @@ To install the most recent release from npm, run:
   * timeout
   * error
   
-> ex.1  
-  simple return
+####  simple return
 
 	var io = require('child-io').IO();
 	io.on('data', function(ret){
@@ -52,8 +43,7 @@ To install the most recent release from npm, run:
 	  console.log('Killed child_process(sync). Execute time is: ' + msec + ' ms');
 	}).exec(function(){ return true; });
 
-> ex.2  
-  use asynchronous callback 
+####  use asynchronous callback 
   
 	var io = require('child-io').IO();
 	io.on('data', function(ret){
@@ -62,13 +52,12 @@ To install the most recent release from npm, run:
 	  console.log('Killed child_process(async). Execute time is: ' + msec + ' ms');
 	}).exec(function(sender){ process.nextTick(function(){ sender(false) }); });
 	
-> see [child-io\_test.js](https://github.com/ystskm/node-child-io/blob/master/sample/child-io_test.js) for more deep use.
+see [child-io\_test.js](https://github.com/ystskm/node-child-io/blob/master/sample/child-io_test.js) for more deep use.
 
-##Note##
+##Note
+Use __FakeChild__ class when v8debug is tied up.
 
-Use FakeChild class when v8debug is tied up.
-
-##Change Log##
+##Change Log
 
 + 2013/5/24
   - 0.3.1 release
