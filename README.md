@@ -1,4 +1,8 @@
 #child-io
+  
+[![Version](https://badge.fury.io/js/child-io.png)](https://npmjs.org/package/child-io)
+[![Build status](https://travis-ci.org/ystskm/node-child-io.png)](https://travis-ci.org/ystskm/node-child-io)  
+  
 #### Create child process for safe execution of dangerous(e.g. user-made) function.
 
 ##Install
@@ -19,12 +23,20 @@ To install the most recent release from [npm](http://npmjs.org/), run:
   eval() or require() should be success to extract item.
   
 - `options` (Object)
-  * limit  : (Default = 300)  
+  * limit  :[Number] (Default = 300)  
     max time to finish executing (millisecond).  
     When exceeded the time, "timeout" event is emitted with Error 'Execution time is over'.  
-  * replace: (Default = {})
+  * replace:[Object] (Default = {})
     String replacement for using variable in executing function.
-  * args   : (Default = [])  
+  * escape :[Function|Any] (Default = true)
+    Escape the replaced string not to fail eval().
+    when truely value is given, the function below is used.
+    
+    function defaultEscaper(s) {
+      return s.replace(/['"]/g, '\\"').replace(/[\r\n]/g, '\\n');
+    }
+    
+  * args   :[Array] (Default = [])  
     given arguments when the function is executed.  
     the data send function "sender" will be put to.  
   
@@ -58,6 +70,10 @@ see [child-io\_test.js](https://github.com/ystskm/node-child-io/blob/master/samp
 Use __FakeChild__ class when v8debug is tied up.
 
 ##Change Log
+
++ 2014/6/26
+  - 0.3.3 release
+  - option "escape" is included and the default is `true`
 
 + 2013/5/24
   - 0.3.1 release

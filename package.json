@@ -1,7 +1,7 @@
 {
   "name": "child-io",
   "description": "Create child process for executing dangerous(user-made) function.",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "author": "ystskm <brilliantpenguin@gmail.com>",
   "repository": {
         "type": "git",
