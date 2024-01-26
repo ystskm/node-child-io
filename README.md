@@ -8,12 +8,16 @@
 ## Install
 To install the most recent release from [npm](http://npmjs.org/), run:
 
+```sh
 	npm install child-io
+```
 
 ## Usage
 	
+```js
 	const io = require('child-io').IO([forkArgs, [options]]);
 	io.exec(func | file, [options]);
+```
   
 - `forkArgs` &lt;Array>  
   process arguments used when child_process is `.fork()` ed.  
