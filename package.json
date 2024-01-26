@@ -41,7 +41,8 @@
     "foonyah-ci": "*"
   },
   "scripts": {
-    "test": "node test/_runner.js"
+    "test": "node test/_runner.js",
+    "sample": "node sample/child-io_test.js"
   },
   "description": "Create child process for executing dangerous(user-made) function.",
   "engines": {

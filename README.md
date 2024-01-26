@@ -80,7 +80,8 @@ To install the most recent release from [npm](http://npmjs.org/), run:
 	}).exec(function(sender){ process.nextTick(function(){ sender(false) }); });
 ```
 	
-see [child-io\_test.js](https://github.com/ystskm/node-child-io/blob/master/sample/child-io_test.js) for more deep use.
+See [child-io\_test.js](https://github.com/ystskm/node-child-io/blob/master/sample/child-io_test.js) for a sample to recognize more contract usage.
+You could run the code by `npm run sample`.
 
 ## Note
  __FakeChild__ class is used automatically when v8debug is tied up.
