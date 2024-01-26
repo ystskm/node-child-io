@@ -180,6 +180,8 @@ module.exports = ci.testCase({
       // const { google } = require('googleapis');
       // console.log('google?', google);
       return `google.auth=${!!google.auth}, OAuth2=${!!(google.auth && google.auth.OAuth2)}`;
+    }, {
+      timeout: 12000
     });
 
   },

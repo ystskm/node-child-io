@@ -1,4 +1,4 @@
-#child-io
+# child-io
   
 [![Version](https://badge.fury.io/js/child-io.png)](https://npmjs.org/package/child-io)
 [![Build status](https://travis-ci.org/ystskm/node-child-io.png)](https://travis-ci.org/ystskm/node-child-io)  
@@ -10,25 +10,29 @@ To install the most recent release from [npm](http://npmjs.org/), run:
 
 	npm install child-io
 
-##Usage
+## Usage
 	
-	var io = require('child-io').IO([argv]);
+	const io = require('child-io').IO([forkArgs, [options]]);
 	io.exec(func | file, [options]);
   
-- `argv` (Array)  
-  process arguments used when child_process is .fork()ed.  
+- `forkArgs` <Array>  
+  process arguments used when child_process is `.fork()` ed.  
   
-- `func` (Function|String) | `file` (String)  
+- exec.`options` <Object>
+  
+  
+- exec.`func` <Function>|<String> | `file` <String>  
   executing original function.  
   eval() or require() should be success to extract item.
   
-- `options` (Object)
-  * limit  :[Number] (Default = 300)  
+- exec.`options` <Object>
+  * timeout: [<Number>] (alias: limit, Default = 5_000ms)
     max time to finish executing (millisecond).  
-    When exceeded the time, "timeout" event is emitted with Error 'Execution time is over'.  
-  * replace:[Object] (Default = {})
+  * reuse  : [<Function>|<Any>]  
+    Judge whether kill or not after execute the process.
+  * replace: [<Object>] (Default = {})
     String replacement for using variable in executing function.
-  * escape :[Function|Any] (Default = true)
+  * escape : [<Function>|<Any>] (Default = true)
     Escape the replaced string not to fail eval().
     when truely value is given, the function below is used.
     
@@ -36,7 +40,7 @@ To install the most recent release from [npm](http://npmjs.org/), run:
       return s.replace(/['"]/g, '\\"').replace(/[\r\n]/g, '\\n');
     }
     
-  * args   :[Array] (Default = [])  
+  * args   : [<Array>] (Default = [])  
     given arguments when the function is executed.  
     the data send function "sender" will be put to.  
   
@@ -46,7 +50,7 @@ To install the most recent release from [npm](http://npmjs.org/), run:
   * timeout
   * error
   
-####  simple return
+#### simple return
 
 	var io = require('child-io').IO();
 	io.on('data', function(ret){
@@ -55,7 +59,7 @@ To install the most recent release from [npm](http://npmjs.org/), run:
 	  console.log('Killed child_process(sync). Execute time is: ' + msec + ' ms');
 	}).exec(function(){ return true; });
 
-####  use asynchronous callback 
+#### use asynchronous callback 
   
 	var io = require('child-io').IO();
 	io.on('data', function(ret){
@@ -66,13 +70,13 @@ To install the most recent release from [npm](http://npmjs.org/), run:
 	
 see [child-io\_test.js](https://github.com/ystskm/node-child-io/blob/master/sample/child-io_test.js) for more deep use.
 
-##Note
+## Note
 Use __FakeChild__ class when v8debug is tied up.
 
-##Change Log
+## Change Log
 
 + 2024/1/26
-  - 0.4.0 release
+  - 0.4.1 release
   - emit "error" event on timeout
   - new option: reuse
 

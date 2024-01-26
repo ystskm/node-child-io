@@ -7,5 +7,4 @@
  * Licensed under Synquery Commercial License. 
  *  + Startup Cloud Commercial License. 
  */
-require('child_process');
 module.exports = require('./lib/child-io');
