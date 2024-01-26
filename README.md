@@ -9,7 +9,7 @@
 To install the most recent release from [npm](http://npmjs.org/), run:
 
 ```sh
-	npm install child-io
+	npm i child-io
 ```
 
 ## Usage
