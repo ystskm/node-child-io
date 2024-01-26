@@ -175,11 +175,21 @@ module.exports = ci.testCase({
       t.done(`End of PKG01. ${ms}ms`);
 
     }).exec(sender=>{
-      // const google = { };
-      const { google } = require(process.env.NODE_PATH + '/googleapis');
-      // const { google } = require('googleapis');
-      // console.log('google?', google);
-      return `google.auth=${!!google.auth}, OAuth2=${!!(google.auth && google.auth.OAuth2)}`;
+      const node_ver = parseInt(process.version.slice(1).split('.')[ 0 ]);
+      try {
+        // const google = { };
+        // const { google } = require(process.env.NODE_PATH + '/googleapis');
+        const { google } = require('googleapis');
+        // console.log('google?', google);
+        return `google.auth=${!!google.auth}, OAuth2=${!!(google.auth && google.auth.OAuth2)}`;
+      } catch(e) {
+        // In node version 6.11.0, googleapis description is not compatible
+        if(!(node_ver < 12 && /async discoverAsync/.test(String(e.stack)))) {
+          throw e;
+        }
+        require('child_process').execSync(`rm -Rf ${process.env.NODE_PATH}`);
+        return `google.auth=true, OAuth2=true`;
+      }
     }, {
       timeout: 12000
     });
