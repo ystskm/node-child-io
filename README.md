@@ -1,5 +1,6 @@
 # child-io
   
+[![Rank](https://nodei.co/npm/child-io.png?downloads=true&amp;downloadRank=true&amp;stars=true)](https://nodei.co/npm/child-io/)  
 [![Version](https://badge.fury.io/js/child-io.png)](https://npmjs.org/package/child-io)
 [![Build status](https://travis-ci.org/ystskm/node-child-io.png)](https://travis-ci.org/ystskm/node-child-io)  
   
@@ -16,20 +17,23 @@ To install the most recent release from [npm](http://npmjs.org/), run:
 	
 ```js
 	const io = require('child-io').IO([forkArgs, [options]]);
-	io.exec(func | file, [options]);
+	io.exec(func | file, [execOpts]);
 ```
   
 - `forkArgs` &lt;Array>  
   process arguments used when child_process is `.fork()` ed.  
   
-- exec.`options` &lt;Object>
+
   
+- `options` &lt;Object>
+  * wkdir: [&lt;String>]  
+  * modules: [&lt;Array>]
   
-- exec.`func` &lt;Function>|&lt;String> | `file` &lt;String>  
+- `func` &lt;Function>|&lt;String> | `file` &lt;String>  
   executing original function.  
   eval() or require() should be success to extract item.
   
-- exec.`options` &lt;Object>
+- `execOpts` &lt;Object>
   * timeout: [&lt;Number>] (alias: limit, Default = 5_000ms)
     max time to finish executing (millisecond).  
   * reuse  : [&lt;Function>|&lt;Any>]  
@@ -56,26 +60,31 @@ To install the most recent release from [npm](http://npmjs.org/), run:
   
 #### simple return
 
-	var io = require('child-io').IO();
+```js
+	const io = require('child-io').IO();
 	io.on('data', function(ret){
 	  console.log('Result: ' + ret); // "Result: true"
 	}).on('end', function(msec){
 	  console.log('Killed child_process(sync). Execute time is: ' + msec + ' ms');
 	}).exec(function(){ return true; });
+```
 
 #### use asynchronous callback 
   
-	var io = require('child-io').IO();
+```js
+	const io = require('child-io').IO();
 	io.on('data', function(ret){
 	  console.log('Result: ' + ret); // "Result: false"
 	}).on('end', function(msec){
 	  console.log('Killed child_process(async). Execute time is: ' + msec + ' ms');
 	}).exec(function(sender){ process.nextTick(function(){ sender(false) }); });
+```
 	
 see [child-io\_test.js](https://github.com/ystskm/node-child-io/blob/master/sample/child-io_test.js) for more deep use.
 
 ## Note
-Use __FakeChild__ class when v8debug is tied up.
+ __FakeChild__ class is used automatically when v8debug is tied up.
+ In that case, message _Currently, typeof v8debug is NOT undefined._ is shown. 
 
 ## Change Log
 
