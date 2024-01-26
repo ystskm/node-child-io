@@ -5,7 +5,7 @@
   
 #### Create child process for safe execution of dangerous(e.g. user-made) function.
 
-##Install
+## Install
 To install the most recent release from [npm](http://npmjs.org/), run:
 
 	npm install child-io
@@ -15,24 +15,24 @@ To install the most recent release from [npm](http://npmjs.org/), run:
 	const io = require('child-io').IO([forkArgs, [options]]);
 	io.exec(func | file, [options]);
   
-- `forkArgs` <Array>  
+- `forkArgs` &lt;Array>  
   process arguments used when child_process is `.fork()` ed.  
   
-- exec.`options` <Object>
+- exec.`options` &lt;Object>
   
   
-- exec.`func` <Function>|<String> | `file` <String>  
+- exec.`func` &lt;Function>|&lt;String> | `file` &lt;String>  
   executing original function.  
   eval() or require() should be success to extract item.
   
-- exec.`options` <Object>
-  * timeout: [<Number>] (alias: limit, Default = 5_000ms)
+- exec.`options` &lt;Object>
+  * timeout: [&lt;Number>] (alias: limit, Default = 5_000ms)
     max time to finish executing (millisecond).  
-  * reuse  : [<Function>|<Any>]  
+  * reuse  : [&lt;Function>|&lt;Any>]  
     Judge whether kill or not after execute the process.
-  * replace: [<Object>] (Default = {})
+  * replace: [&lt;Object>] (Default = { })
     String replacement for using variable in executing function.
-  * escape : [<Function>|<Any>] (Default = true)
+  * escape : [&lt;Function>|<Any>] (Default = true)
     Escape the replaced string not to fail eval().
     when truely value is given, the function below is used.
     
@@ -40,7 +40,7 @@ To install the most recent release from [npm](http://npmjs.org/), run:
       return s.replace(/['"]/g, '\\"').replace(/[\r\n]/g, '\\n');
     }
     
-  * args   : [<Array>] (Default = [])  
+  * args   : [&lt;Array>] (Default = [ ])  
     given arguments when the function is executed.  
     the data send function "sender" will be put to.  
   
