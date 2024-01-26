@@ -71,6 +71,11 @@ Use __FakeChild__ class when v8debug is tied up.
 
 ##Change Log
 
++ 2024/1/26
+  - 0.4.0 release
+  - emit "error" event on timeout
+  - new option: reuse
+
 + 2014/6/26
   - 0.3.3 release
   - option "escape" is included and the default is `true`

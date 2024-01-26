@@ -1,0 +1,7 @@
+{
+  "name": "synquery",
+  "version": "1.0.0",
+  "dependencies": {
+    "googleapis": "*"
+  }
+}

@@ -3,4 +3,3 @@ npm-debug.log
 build.xml
 release.sh
 release-LICENSE
-/node_modules/

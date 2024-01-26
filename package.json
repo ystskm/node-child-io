@@ -1,26 +1,69 @@
 {
-  "name": "child-io",
-  "description": "Create child process for executing dangerous(user-made) function.",
-  "version": "0.3.4",
-  "author": "ystskm <brilliantpenguin@gmail.com>",
-  "repository": {
-        "type": "git",
-        "url": "https://github.com/ystskm/node-child-io.git"
-    },
-  "main": "./index",
-  "engines": {
-    "node": ">=0.8.21"
+  "_args": [
+    [
+      "child-io@0.3.4",
+      "/Users/ystk_skm/workspaces/www-libtech/StartupCloud"
+    ]
+  ],
+  "_from": "child-io@0.3.4",
+  "_id": "child-io@0.3.4",
+  "_inBundle": false,
+  "_integrity": "sha1-U9mjtVxpMw6Dc5KebteQf1gWcLs=",
+  "_location": "/child-io",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "child-io@0.3.4",
+    "name": "child-io",
+    "escapedName": "child-io",
+    "rawSpec": "0.3.4",
+    "saveSpec": null,
+    "fetchSpec": "0.3.4"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/child-io/-/child-io-0.3.4.tgz",
+  "_spec": "0.3.4",
+  "_where": "/Users/ystk_skm/workspaces/www-libtech/StartupCloud",
+  "author": {
+    "name": "ystskm",
+    "email": "brilliantpenguin@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/ystskm/node-child-io/issues"
   },
   "dependencies": {
+    
   },
-  "licenses": [{
-    "type": "MIT",
-    "url": "http://github.com/ystskm/node-child-io/blob/master/LICENSE.md"
-  }],
-  "readmeFilename": "README.md",
+  "devDependencies": {
+    "foonyah-ci": "*"
+  },
+  "scripts": {
+    "test": "node test/_runner.js"
+  },
+  "description": "Create child process for executing dangerous(user-made) function.",
+  "engines": {
+    "node": ">=6.11.0"
+  },
+  "homepage": "https://github.com/ystskm/node-child-io#readme",
   "keywords": [
     "child_process",
     "keep-alive"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/ystskm/node-child-io/blob/master/LICENSE.md"
+    }
+  ],
+  "main": "./lib/child-io.js",
+  "name": "child-io",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ystskm/node-child-io.git"
+  },
+  "version": "0.4.0"
 }
