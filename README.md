@@ -90,6 +90,10 @@ You could run the code by `npm run sample`.
 ## Change Log
 
 + 2024/1/26
+  - 0.4.3 release
+  - add option "wkdir" and "modules" 
+  
++ 2024/1/26
   - 0.4.1 release
   - emit "error" event on timeout
   - new option: reuse

@@ -1,6 +1,6 @@
 {
   
-  "version": "0.4.2",
+  "version": "0.4.3",
   "name": "child-io",
   "description": "Create child process for executing dangerous(user-made) function.",
   
